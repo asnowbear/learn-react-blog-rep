@@ -17,10 +17,12 @@ export default function articleReducer(state = defaultState, action) {
   switch (type) {
     case TYPES.ARTICLE_GET_TAG_LIST:
       const tagList = genertorColor(payload)
+      // reducer返回新的state
       return { ...state, tagList }
 
     case TYPES.ARTICLE_GET_CATEGORY_LIST:
       const categoryList = genertorColor(payload)
+      // reducer返回新的state
       return { ...state, categoryList }
 
     default:

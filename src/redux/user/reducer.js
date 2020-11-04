@@ -25,10 +25,12 @@ export default function UserReducer(state = defaultState, action) {
     case TYPES.USER_LOGIN:
       const { username, userId, role, github = null, token } = payload
       save('userInfo', { username, userId, role, github, token })
+      // reducer返回新的state
       return { ...state, username, userId, role, github }
 
     case TYPES.USER_LOGIN_OUT:
       remove('userInfo')
+      // reducer返回新的state
       return { ...state, username: '', userId: 0, role: 2, github: null }
 
     default:
