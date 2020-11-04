@@ -31,6 +31,7 @@ function FormItem(props) {
 }
 
 function SignModal(props) {
+  // useDispatch：作用，共享状态，返回store对dispatch引用，可执行redux中的方法
   const dispatch = useDispatch() // dispatch hooks
   const location = useLocation() // location
   const [visible, setVisible] = useState(false)
