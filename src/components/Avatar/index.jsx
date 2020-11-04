@@ -11,6 +11,9 @@ import SvgIcon from '@/components/SvgIcon'
 
 const { Text, Title } = Typography
 
+// @CHA: react组件的特点是尽可能的细小
+
+// 函数参数的结构赋值，一步到位，使用简单、轻妙
 function AvatarComponent({ username, github, role }) {
   let avatarSrc = ''
   if (github && github.avatar_url) avatarSrc = github.avatar_url
@@ -80,11 +83,13 @@ function AppAvatar(props) {
   }
 }
 
+// props的类型
 AppAvatar.propTypes = {
   userInfo: PropTypes.object.isRequired,
   popoverVisible: PropTypes.bool
 }
 
+// props的默认属性值
 AppAvatar.defaultProps = {
   popoverVisible: true
 }

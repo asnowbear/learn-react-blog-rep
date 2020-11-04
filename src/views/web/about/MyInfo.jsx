@@ -1,6 +1,10 @@
 import React from 'react'
 
 // components
+// 1、Divider：中分线，type指定线的方向（横竖）
+// 2、Icon一个图标组件，见AD官网
+// 3、Rate是评分组件
+
 import { Divider, Rate, Icon, Avatar } from 'antd'
 import Href from '@/components/Href'
 import SvgIcon from '@/components/SvgIcon'

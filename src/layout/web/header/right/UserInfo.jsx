@@ -16,6 +16,8 @@ import useBus from '@/hooks/useBus'
 function UserInfo(props) {
   const dispatch = useDispatch()
   const bus = useBus()
+  // useSelector: 共享状态,从Redux的store中提取数据（state）
+  // 登录成功后将数据存储到store中，同时这里将会响应变化重新渲染组件
   const userInfo = useSelector(state => state.user)
   const { username, github, role } = userInfo
 
@@ -41,6 +43,7 @@ function UserInfo(props) {
   return (
     <div className='header-userInfo'>
       {username ? (
+        // 下拉菜单
         <Dropdown placement='bottomCenter' overlay={MenuOverLay} trigger={['click', 'hover']}>
           <div style={{ height: 55 }}>
             <AppAvatar userInfo={userInfo} popoverVisible={false} />

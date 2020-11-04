@@ -5,6 +5,8 @@ import SvgIcon from '@/components/SvgIcon'
 import Href from '@/components/Href'
 import MyInfo from '@/views/web/about/MyInfo'
 
+// 常量定义大写并且下划线
+
 // API_BASE_URL
 export const API_BASE_URL = 'http://localhost:6060'
 
