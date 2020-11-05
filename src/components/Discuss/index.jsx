@@ -65,18 +65,13 @@ function Discuss(props) {
     switch (e.key) {
       case 'login':
         bus.emit('openSignModal', 'login')
-
         break
-
       case 'register':
         bus.emit('openSignModal', 'register')
-
         break
-
       case 'loginout':
         dispatch(loginout())
         break
-
       default:
         break
     }
