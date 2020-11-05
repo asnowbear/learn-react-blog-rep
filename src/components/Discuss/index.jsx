@@ -47,6 +47,7 @@ function Discuss(props) {
   const [value, setValue] = useState('')
   const [submitting, withLoading] = useAjaxLoading()
 
+  // 既分代码片段，也分模板组件，
   const renderDropdownMenu = () => {
     return username ? (
       <Menu onClick={handleMenuClick}>
