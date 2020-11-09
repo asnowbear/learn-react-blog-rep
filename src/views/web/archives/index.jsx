@@ -6,7 +6,6 @@ import { ARCHIVES_PAGESIZE } from '@/utils/config'
 // methods
 import { groupBy } from '@/utils'
 
-// components
 import { Timeline, Icon, Spin } from 'antd'
 import { Link } from 'react-router-dom'
 import Pagination from '@/components/Pagination'
