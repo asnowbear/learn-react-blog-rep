@@ -29,7 +29,7 @@ export default function UserReducer(state = defaultState, action) {
       return { ...state, username, userId, role, github }
 
     case TYPES.USER_LOGIN_OUT:
-      remove('userInfo')
+      remove('userInfo') // 从ls中删除用户信息
       // reducer返回新的state
       return { ...state, username: '', userId: 0, role: 2, github: null }
 
