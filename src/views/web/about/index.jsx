@@ -27,7 +27,8 @@ function About(props) {
       <Avatar src={SIDEBAR.avatar} />
       <span style={{ paddingLeft: 10 }}>{ABOUT.describe}</span>
       {ABOUT.renderMyInfo || null}
-      {ABOUT.discuss && <Discuss articleId={-1} commentList={commentList} setCommentList={setCommentList} />}
+      {ABOUT.discuss && 
+        <Discuss articleId={-1} commentList={commentList} setCommentList={setCommentList} />}
     </div>
   )
 }
