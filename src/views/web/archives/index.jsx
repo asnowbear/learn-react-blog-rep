@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react'
 import './index.less'
 
 import { ARCHIVES_PAGESIZE } from '@/utils/config'
-
 // methods
 import { groupBy } from '@/utils'
 
