@@ -20,7 +20,7 @@ function AvatarComponent({ username, github, role }) {
   if (role === 1) avatarSrc = DISCUSS_AVATAR
   return <Avatar src={avatarSrc}>{username}</Avatar>
 }
-//
+
 function AppAvatar(props) {
   const { role, username, github } = props.userInfo
   if (github && props.popoverVisible) {
