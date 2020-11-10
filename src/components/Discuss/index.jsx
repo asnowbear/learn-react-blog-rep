@@ -87,7 +87,8 @@ function Discuss(props) {
     if (!value) return
     if (!userInfo.username) return message.warn('您未登陆，请登录后再试。')
 
-    // 如何定义withLoading的作用
+    // 带有loading效果的hook函数
+    // 增加评论
     withLoading(
       axios.post(
         '/discuss',
@@ -98,8 +99,8 @@ function Discuss(props) {
         }
       )
     ).then(res => {
-      setValue('')
-      props.setCommentList(res.rows)
+      setValue('') // 提交成功后再清空评论区输入框
+      props.setCommentList(res.rows) // @TODO：为什么使用props
     })
   }
 

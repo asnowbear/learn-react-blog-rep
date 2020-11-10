@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 export default function useRequestLoading() {
   const [loading, setLoading] = useState(false)
 
+  // 装饰器模式，将request对象包装成带有loading效果的组件
   function withLoading(request) {
     if (request instanceof Promise) {
       return new Promise((reslove, reject) => {

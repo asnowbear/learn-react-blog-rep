@@ -14,6 +14,7 @@ function CommentItem(props) {
   const { user } = item
   const [value, setValue] = useState('')
 
+  // useEffect依赖参数replyVisible的变化而执行内部回调
   useEffect(() => {
     replyVisible && setValue('')
   }, [replyVisible])
@@ -28,6 +29,7 @@ function CommentItem(props) {
     }
   }
 
+  // 增加评论
   function onSubmit() {
     if (!userInfo.userId) return message.warn('您未登陆，请登录后再试。')
     axios
@@ -43,9 +45,10 @@ function CommentItem(props) {
       })
   }
 
-  // delete discuss
+  // 删除评论
   function onDelete() {
     if (replyId) {
+      // axios也是直接融入到业务组件中
       axios.delete(`/discuss/reply/${replyId}`).then(() => {
         const commentList = [...props.commentList]
         const tagetComment = commentList.find(c => c.id === commentId)
@@ -66,27 +69,34 @@ function CommentItem(props) {
   }
 
   return (
+    // AD评论组件
     <Comment
       actions={[
         <span onClick={handleReply}>Reply to</span>,
         <>
           {userInfo.role === 1 && (
             <Popconfirm title={'是否删除该留言？'} cancelText='取消' okText='确认' onConfirm={onDelete}>
+              {/* 显示删除按钮 */}
               <Icon type='delete' className='icon-delete' />
             </Popconfirm>
           )}
         </>
       ]}
+      // 名称
       author={<span>{user && user.username}</span>}
+      // 头像
       avatar={<AppAvatar userInfo={user} />}
+      // 展示的内容
       content={
         <div className='article-detail' dangerouslySetInnerHTML={{ __html: translateMarkdown(item.content, true) }} />
       }
+      // 评论日期
       datetime={
         <Tooltip title={item.createdAt}>
           <span>{dayjs(item.createdAt).fromNow()}</span>
         </Tooltip>
       }>
+      {/* 回复评论 */}
       {replyVisible && (
         <div className='reply-form'>
           <TextArea
@@ -126,6 +136,8 @@ const CommentList = props => {
           commentList={props.commentList}
           onReply={setReplyTarget}
           replyVisible={replyTarget.commentId === comment.id && !replyTarget.replyId}>
+
+          {/* 子评论区UI */}
           {comment.replies.map(reply => (
             <CommentItem
               item={reply}
