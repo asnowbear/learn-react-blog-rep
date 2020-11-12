@@ -13,6 +13,10 @@ export const login = params => {
     })
 }
 
+/**
+ * 注册提交到后端后，没有更新到store中
+ * @param {} params
+ */
 export const register = params => {
   return dispatch =>
     axios.post('/register', params).then(res => {

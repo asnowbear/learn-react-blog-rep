@@ -38,6 +38,7 @@ function SignModal(props) {
   const [type, setType] = useState('login')
 
   // getFieldDecorator用于给表单项添加自定义验证规则
+  // 首参为表单字段
   const { getFieldDecorator } = props.form
 
   // 监听事件，打开modal窗口
@@ -143,4 +144,7 @@ function SignModal(props) {
 
 // Form.create()返回一个装修器，
 // SignModal被装修后，将自带this.props.form属性
+
+// AD官网4.8版本示例，并没有使用Form.create()装饰器
+// 注意也可以使用Form.useForm()
 export default Form.create()(SignModal)
