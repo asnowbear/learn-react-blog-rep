@@ -12,7 +12,7 @@ import { Alert } from 'antd'
 import { ANNOUNCEMENT } from '@/config'
 
 import useFetchList from '@/hooks/useFetchList'
-
+// 无状态组件？
 function SideBar(props) {
   const tagList = useSelector(state => state.article.tagList || [])
 
