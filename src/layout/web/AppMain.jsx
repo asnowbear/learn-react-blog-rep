@@ -4,6 +4,7 @@ import { ANNOUNCEMENT } from '@/config'
 import { useMediaQuery } from 'react-responsive'
 
 function AppMain(props) {
+  console.log('AppMain props', props)
   const iphoneScreen = useMediaQuery({
     query: '(max-width: 576px)'
   })
