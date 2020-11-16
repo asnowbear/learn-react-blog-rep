@@ -14,6 +14,7 @@ import { ANNOUNCEMENT } from '@/config'
 import useFetchList from '@/hooks/useFetchList'
 // 无状态组件？
 function SideBar(props) {
+  // 获取store中的tag列表
   const tagList = useSelector(state => state.article.tagList || [])
 
   const { dataList: articleList } = useFetchList({
@@ -42,6 +43,7 @@ function SideBar(props) {
 
       {ANNOUNCEMENT.enable && <Alert message={ANNOUNCEMENT.content} type='info' />}
 
+      {/* 热门文章-UI */}
       <Divider orientation='left'>热门文章</Divider>
       <ul className='article-list'>
         {articleList.map(d => (
@@ -51,6 +53,7 @@ function SideBar(props) {
         ))}
       </ul>
 
+      {/* 标签-UI */}
       <Divider orientation='left'>标签</Divider>
       <div className='tag-list'>
         {tagList.map((tag, i) => (
