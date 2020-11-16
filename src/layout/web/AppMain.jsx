@@ -4,7 +4,7 @@ import { ANNOUNCEMENT } from '@/config'
 import { useMediaQuery } from 'react-responsive'
 
 function AppMain(props) {
-  console.log('AppMain props', props)
+  console.log('AppMain props', props.children)
   const iphoneScreen = useMediaQuery({
     query: '(max-width: 576px)'
   })
@@ -18,6 +18,7 @@ function AppMain(props) {
       {(ipadScreen || iphoneScreen) && ANNOUNCEMENT.enable && (
         <Alert message={ANNOUNCEMENT.content} type='info' style={{ marginTop: iphoneScreen ? 20 : 0, marginBottom: ipadScreen ? 20 : 0 }} />
       )}
+      {/* Switch对象，用于切换路由，包括article/archives/categories/about */}
       {props.children}
     </div>
   )
