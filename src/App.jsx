@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 // config
 import routes from '@/routes'
 
-// components
+// components 公共基础组件
 import PublicComponent from '@/components/Public'
 
 const App = props => {
@@ -14,9 +14,11 @@ const App = props => {
   // 解构 route
   function renderRoutes(routes, contextPath) {
     const children = []
+
     const renderRoute = (item, routeContextPath) => {
       let newContextPath = item.path ? `${routeContextPath}/${item.path}` : routeContextPath
       newContextPath = newContextPath.replace(/\/+/g, '/')
+      // admin路由
       if (newContextPath.includes('admin') && role !== 1) {
         item = {
           ...item,
@@ -47,7 +49,9 @@ const App = props => {
     return <Switch>{children}</Switch>
   }
 
+  // 开始递归构建路由对象
   const children = renderRoutes(routes, '/')
+
   return (
     <BrowserRouter>
       {children}
