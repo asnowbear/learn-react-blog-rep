@@ -17,6 +17,7 @@ function SideBar(props) {
   // 获取store中的tag列表
   const tagList = useSelector(state => state.article.tagList || [])
 
+  // 获取文章列表
   const { dataList: articleList } = useFetchList({
     withLoading: false,
     requestUrl: '/article/list',

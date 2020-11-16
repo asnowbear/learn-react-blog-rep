@@ -19,7 +19,7 @@ function PublicComponent(props) {
 
   // render后执行
   useMount(() => {
-    dispatch(getTagList())
+    dispatch(getTagList()) // 获取标签列表
     dispatch(getCategoryList())
   })
 
