@@ -1,12 +1,13 @@
 import { GITHUB } from '@/config'
 import Layout from '@/layout/web'
-import lazy from '@/components/Lazy'
+import lazy from '@/components/Lazy' // 自定义的一种懒加载方式
 
 export default {
   path: '/',
   name: 'home',
-  component: Layout,
+  component: Layout, // layout为布局组件，通过配置的子路由填充子组件
   childRoutes: [
+    // 默认填充此组件
     { path: '', component: lazy(() => import('@/views/web/home')) },
     { path: 'article/:id', component: lazy(() => import('@/views/web/article')) },
     { path: 'archives', component: lazy(() => import('@/views/web/archives')) },

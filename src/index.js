@@ -9,6 +9,7 @@ import store from '@/redux'
 
 // styles
 import '@/assets/icons/iconfont'
+// 引用全局样式，其他模块无需再引入
 import '@/styles/index.less'
 
 ReactDOM.render(

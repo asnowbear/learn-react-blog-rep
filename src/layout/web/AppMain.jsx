@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive'
 
 // 主程序面板，路由组件的容器
 function AppMain(props) {
-  console.log('AppMain props', props.children)
   const iphoneScreen = useMediaQuery({
     query: '(max-width: 576px)'
   })
