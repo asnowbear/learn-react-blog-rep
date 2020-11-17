@@ -52,6 +52,13 @@ const App = props => {
   // 开始递归构建路由对象
   const children = renderRoutes(routes, '/')
 
+  // 路由的层次如下：
+  // <BrowserRouter>
+  //   <Switch>
+  //     <Router></Router>
+  //     ...
+  //   </Switch>
+  // </BrowserRouter>
   return (
     <BrowserRouter>
       {children}
