@@ -15,12 +15,18 @@ import Pagination from '@/components/Pagination'
 import useFetchList from '@/hooks/useFetchList'
 
 const Home = props => {
+  // 获取article列表
   const { loading, pagination, dataList } = useFetchList({
     requestUrl: '/article/list',
     queryParams: { pageSize: HOME_PAGESIZE },
     fetchDependence: [props.location.search]
   })
 
+  // useMemo可以更换成useCallback的方式（去掉return）
+  // 这里只有dataList发生变化（还有其他变化）后才会引起函数计算
+  // 函数计算得到新值传给ArticleList子组件，ArticleList
+  // 组件才会更新
+  // 类似Vue中的props，或者计算属性
   const list = useMemo(() => {
     return [...dataList].map(item => {
       const index = item.content.indexOf('<!--more-->')
