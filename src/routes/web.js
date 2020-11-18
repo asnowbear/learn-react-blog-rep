@@ -1,6 +1,8 @@
 import { GITHUB } from '@/config'
 import Layout from '@/layout/web'
-import lazy from '@/components/Lazy' // 自定义的一种懒加载方式
+// 自定义的一种懒加载方式
+// 可以使用react的lasy+suspense
+import lazy from '@/components/Lazy'
 
 export default {
   path: '/',

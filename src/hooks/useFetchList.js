@@ -22,7 +22,9 @@ export default function useFetchList({
   const [loading, setLoading] = useState(false)
   const [pagination, setPagination] = useState({ current: 1, pageSize: 10, total: 0 })
 
+  // useLocation代表当前URL对象的hook
   const location = useLocation()
+  // 用于历史导航的hook
   const history = useHistory()
 
   useMount(() => {
