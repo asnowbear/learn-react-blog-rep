@@ -6,7 +6,6 @@ const antIcon = <Icon type='loading' style={{ fontSize: 24 }} spin />
 
 /**
  * 使用高阶组件包裹import组件，使其变成异步加载组件
- * 
  * Code Splitting with ES2015 的一种方式而已，相对落后
  * --------------------------------------
  * 在Suspense出来以后，该方式逐渐会被替换
