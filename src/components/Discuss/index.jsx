@@ -2,7 +2,6 @@ import React, { Component, Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './index.less'
 import { useSelector, useDispatch } from 'react-redux'
-import { DISCUSS_AVATAR } from '@/config'
 
 // methods
 import axios from '@/utils/axios'
