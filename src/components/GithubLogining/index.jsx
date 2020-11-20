@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 // ..
-import { Spin } from 'antd'
 import { decodeQuery } from '@/utils'
 import { login } from '@/redux/user/actions'
 import { get, remove } from '@/utils/storage'

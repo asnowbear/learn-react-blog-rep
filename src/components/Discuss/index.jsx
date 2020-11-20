@@ -10,8 +10,6 @@ import { calcCommentsCount } from '@/utils'
 import { loginout } from '@/redux/user/actions'
 import useAjaxLoading from '@/hooks/useAjaxLoading'
 
-// components
-import SvgIcon from '@/components/SvgIcon'
 import {
   Comment, Avatar, Form, Button, Divider,
   Input, Icon, Menu, Dropdown, message, Modal
