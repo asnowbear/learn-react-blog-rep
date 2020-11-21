@@ -25,6 +25,7 @@ function PublicComponent(props) {
 
   return (
     <>
+      {/* Empty components are self-closing */}
       <SignModal />
       <UploadModal />
     </>
