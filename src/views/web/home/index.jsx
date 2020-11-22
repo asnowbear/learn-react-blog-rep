@@ -5,6 +5,8 @@ import { decodeQuery, translateMarkdown } from '@/utils'
 import { HOME_PAGESIZE } from '@/utils/config'
 
 // components
+// 注意，这两个组件并没有往component上放，本组件为Home模块的私用组件
+// 如果发现，多个模板公用一个组件，则必须上升到compoment包下
 import QuickLink from './QuickLink'
 import ArticleList from './List'
 
