@@ -24,6 +24,7 @@ function PublicComponent(props) {
   })
 
   return (
+    // 空标签，是React.fragment的语法糖，不可见也不渲染
     <>
       {/* Empty components are self-closing */}
       <SignModal />
