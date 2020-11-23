@@ -40,12 +40,14 @@ const App = props => {
         )
         item.childRoutes.forEach(r => renderRoute(r, newContextPath))
       } else {
+        // exact提供精准匹配作用
         children.push(<Route key={newContextPath} component={item.component} path={newContextPath} exact />)
       }
     }
 
     routes.forEach(item => renderRoute(item, contextPath))
 
+    // Switch只用来匹配第一个满足要求的路由，然后不再匹配下去
     return <Switch>{children}</Switch>
   }
 
@@ -53,9 +55,9 @@ const App = props => {
   const children = renderRoutes(routes, '/')
 
   // 路由的层次如下：
-  // <BrowserRouter>
+  // <BrowserRouter>  router容器
   //   <Switch>
-  //     <Router></Router>
+  //     <Route></Route>
   //     ...
   //   </Switch>
   // </BrowserRouter>
