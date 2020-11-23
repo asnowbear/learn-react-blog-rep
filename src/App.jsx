@@ -54,13 +54,21 @@ const App = props => {
   // 开始递归构建路由对象
   const children = renderRoutes(routes, '/')
 
-  // 路由的层次如下：
+  // 本项目的路由体系：
+  // ----------------------------------
+  // 1、路由的层次如下：
   // <BrowserRouter>  router容器
   //   <Switch>
   //     <Route></Route>
   //     ...
   //   </Switch>
   // </BrowserRouter>
+
+  // 2、所有路由必须经过此过程注册
+  // 然后才能通过Link、NavLink、useHistory代码方式跳转
+  // useHistory的方式是使用react的钩子，从代码方式跳入到指定
+  // 路由
+  // 3、Link是本项目主要的路由接入方法
   return (
     <BrowserRouter>
       {children}
