@@ -12,6 +12,7 @@ function NavBar(props) {
       {/* react是以Array.map的形式遍历，和vue的v-for一致 */}
       {navList.map(nav => (
         <Menu.Item key={nav.link}>
+          {/* 使用Link方式切换路由 */}
           <Link to={nav.link}>
             {nav.icon && <Icon type={nav.icon} />}
             <span className='nav-text'>{nav.title}</span>

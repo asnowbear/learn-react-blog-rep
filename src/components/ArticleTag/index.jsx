@@ -10,23 +10,34 @@ function getColor(name, colorList) {
   return target ? target.color : ''
 }
 
+// 关于Link的解读：
+// -------------------------------
+// Link是React内部使用路由跳转的，会被react渲染成<a/>（超链接）
+// Link是react实现路由跳转的常用手段之一，主要使用在Jsx中
+
+// 无状态组件
+// home和article均在使用该组件
 const ArticleTag = props => {
   const tagColorList = useSelector(state => state.article.tagList) // 相当于 connect(state => state.article.tagList)(ArticleTag)
   const { tagList, categoryList } = props
 
   return (
     <>
+      {/* tag-ui */}
       {tagList.length > 0 && (
+        // 一般判断条件内都内置一个<>
         <>
           <Divider type='vertical' style={{ marginRight: 7 }} />
           <SvgIcon type='icontags' style={{ marginRight: 7 }} />
           {tagList.map((tag, i) => (
             <Tag key={i} color={getColor(tag.name, tagColorList)}>
+              {/* 使用Link方式跳入，不一定使用 */}
               <Link to={`/tags/${tag.name}`}>{tag.name}</Link>
             </Tag>
           ))}
         </>
       )}
+      {/* 分类-ui */}
       {categoryList.length > 0 && (
         <>
           <Divider type='vertical' style={{ marginRight: 7 }} />
