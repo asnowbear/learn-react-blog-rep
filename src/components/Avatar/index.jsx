@@ -11,7 +11,7 @@ import SvgIcon from '@/components/SvgIcon'
 
 const { Text, Title } = Typography
 
-// @CHA: react组件的特点是尽可能的细小
+// react组件的特点是尽可能的细小
 // 函数参数的结构赋值，一步到位，使用简单、轻妙
 function AvatarComponent({ username, github, role }) {
   let avatarSrc = ''
