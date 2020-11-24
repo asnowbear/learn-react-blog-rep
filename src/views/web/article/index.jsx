@@ -8,6 +8,7 @@ import { translateMarkdown, calcCommentsCount } from '@/utils'
 import useAjaxLoading from '@/hooks/useAjaxLoading'
 
 // components
+// antd是一个很好的引入方式
 import { Drawer, Icon, Divider, Spin } from 'antd'
 import ArticleTag from '@/components/ArticleTag'
 import SvgIcon from '@/components/SvgIcon'
