@@ -50,6 +50,7 @@ const QuickLink = props => {
         onClose={e => setDrawerVisible(false)}
         visible={drawerVisible}
         getContainer={() => document.querySelector('.app-home')}>
+        {/* 文章列表 */}
         <List list={list} showTitle={false} />
       </Drawer>
     </>

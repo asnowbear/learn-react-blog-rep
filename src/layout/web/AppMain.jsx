@@ -5,10 +5,12 @@ import { useMediaQuery } from 'react-responsive'
 
 // 主程序面板，路由组件的容器
 function AppMain(props) {
+  // 判断是否是苹果手机的屏幕分辨率
   const iphoneScreen = useMediaQuery({
     query: '(max-width: 576px)'
   })
 
+  // 判断ipad
   const ipadScreen = useMediaQuery({
     query: '(min-width: 576px) and (max-width: 992px)'
   })

@@ -17,18 +17,19 @@ import Pagination from '@/components/Pagination'
 import useFetchList from '@/hooks/useFetchList'
 
 const Home = props => {
-  // 获取article列表
+  // 查询文章列表，（如果浏览器地址栏中有参数，则需要解析出来作为查询条件）
   const { loading, pagination, dataList } = useFetchList({
     requestUrl: '/article/list',
     queryParams: { pageSize: HOME_PAGESIZE },
-    fetchDependence: [props.location.search]
+    fetchDependence: [props.location.search] // 查询条件
   })
 
   // useMemo可以更换成useCallback的方式（去掉return）
   // 这里只有dataList发生变化（还有其他变化）后才会引起函数计算
   // 函数计算得到新值传给ArticleList子组件，ArticleList
   // 组件才会更新
-  // 类似Vue中的props，或者计算属性
+  // 类似Vue中的props，依赖计算，类似vue中的computed还是watch?
+  // 【使用场景】：根据一个值通过一个函数计算得到一个新值，并传递给子组件
   const list = useMemo(() => {
     return [...dataList].map(item => {
       const index = item.content.indexOf('<!--more-->')
@@ -42,13 +43,13 @@ const Home = props => {
   return (
     <Spin tip='Loading...' spinning={loading}>
       <div className='app-home'>
-        {/* list  */}
+        {/* 文章列表  */}
         <ArticleList list={list} />
 
-        {/* quick link */}
+        {/* 快速导航 */}
         <QuickLink list={list} />
 
-        {/* serach empty result */}
+        {/* 搜索结果为空的情形 */}
         {list.length === 0 && keyword && (
           <div className='no-data'>
             <Empty description={(

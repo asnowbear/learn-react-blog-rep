@@ -16,7 +16,9 @@ const WebLayout = props => {
   // 路由投放的组件将自动携带参数到props
   return (
     <Layout className='app-container'>
+      {/* 头部 */}
       <Header />
+      {/* 内容 */}
       <Row className='app-wrapper'>
         <Col {...siderLayout}>
           <SideBar />
@@ -25,6 +27,7 @@ const WebLayout = props => {
           <AppMain {...props} />
         </Col>
       </Row>
+      {/* 返回页面开始 */}
       <BackTop target={() => document.querySelector('.app-main')} />
     </Layout>
   )
