@@ -22,13 +22,17 @@ function SearchButton(props) {
     setKeyword(e.target.value)
   }
 
+  // 点击回车，引起blur，触发submit，然后加入查询条件到地址栏中，home执行查询，并渲染
   const handlePressEnter = e => {
     e.target.blur()
   }
 
   return (
     <div id='search-box'>
-      <Icon type='search' className='search-icon' onClick={e => props.history.push(`/?page=1&keyword=${keyword}`)} />
+      <Icon
+        type='search'
+        className='search-icon'
+        onClick={e => props.history.push(`/?page=1&keyword=${keyword}`)} />
       <Input
         type='text'
         value={keyword}
