@@ -1,6 +1,25 @@
-## 整体
 
-### 使用到的antd组件
+# 应用解刨总结
+
+## 一、前端
+
+### 框架层面
+
+#### 工程组织架构
+
+- layout
+
+  应用的UI框架
+
+- view
+  
+  框架下的组件
+
+- component
+
+  公共使用(>2的引用)的组件包
+
+#### 1、使用到的antd组件
 
 - Icon (图标)
 
@@ -32,7 +51,7 @@
 
   本工程：文章检索，在检索结果出来之前显示等待
 
-### 工程使用的hooks
+#### 2、工程使用的hooks
 
 - useState
 
@@ -47,20 +66,9 @@
  本质是使用window.mathMedia(queryString)来返回媒体查询的结果列表，常常用语判断屏幕窗口的大小
  [Window matchMedia() 方法](https://www.runoob.com/jsref/met-win-matchmedia.html)
 
-### 前端-工程目录
+## 二、后端
 
-#### UI级别
-
-- view 
-    负责页面
-
-- layout 
-    负责整体应用布局
-
-- component 
-    细颗粒组件级别
-    如果存在多个模块/组件共同使用的组件，则必须移到该包目录下
-
+## 三、工程化
 
 
 
