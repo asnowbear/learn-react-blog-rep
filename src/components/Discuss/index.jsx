@@ -20,9 +20,11 @@ import useBus from '@/hooks/useBus'
 
 const { TextArea } = Input
 
+// 展示型组件[state-less],原则为props down, callback(react)/events(vue) up
+// 1、通过props来接受数据源[value/articleId]
+// 2、单一职责，将不属于自己的行为抛出去让父级处理[onSubmit/onChange]
 const Editor = ({ onChange, onSubmit, submitting, value, articleId }) => (
   <div>
-    {/* Form.item竟然可以单独使用，和Vue确实有所不同 */}
     <Form.Item>
       <TextArea rows={4} placeholder='说点什么...' onChange={onChange} value={value} />
     </Form.Item>
