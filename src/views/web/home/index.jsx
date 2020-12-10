@@ -16,6 +16,9 @@ import Pagination from '@/components/Pagination'
 // hooks
 import useFetchList from '@/hooks/useFetchList'
 
+// 容器组件
+// 1、为子组件提供数据【list】
+// 2、包括多个业务子组件[ArticleList/QuickLink]
 const Home = props => {
   // 查询文章列表，（如果浏览器地址栏中有参数，则需要解析出来作为查询条件）
   const { loading, pagination, dataList } = useFetchList({

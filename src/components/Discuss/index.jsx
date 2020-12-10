@@ -41,6 +41,10 @@ const Editor = ({ onChange, onSubmit, submitting, value, articleId }) => (
   </div>
 )
 
+// 业务组件？容器组件
+// 1、控制redux状态(dispatch)
+// 2、使用redux中的状态数据(userInfo)
+// 3、使用bus与其他组件进行通信
 function Discuss(props) {
   const dispatch = useDispatch() // 通知到redux中执行actions
   const bus = useBus() // 跨组件通信

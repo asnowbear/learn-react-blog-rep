@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Result, Button } from 'antd'
-
+// 展示型组件/通用组件/UI组件
 function PageNotFound(props) {
   return (
     <Result

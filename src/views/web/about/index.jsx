@@ -11,6 +11,9 @@ import Discuss from '@/components/Discuss'
 
 import { useMediaQuery } from 'react-responsive'
 
+// 容器组件
+// 子组件的通信状态中转[setCommonList]
+// 获取数据源，并提供给子组件，
 function About(props) {
   // 1、useState：让组件有状态，定义About组件的状态
   // 2、接受一个参数作为初始值，并且返回一个数组
